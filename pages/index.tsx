@@ -71,6 +71,7 @@ function Page() {
 								}
 							}
 						}}
+						redraw={true}
 					/>
 				</div>
 			</div>
