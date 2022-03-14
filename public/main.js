@@ -27,7 +27,9 @@
 					ticks: {
 						color: '#ccc'
 					},
-					beginAtZero: true
+					beginAtZero: true,
+					min: 70,
+					max: 100
 				}
 			}
 		}
