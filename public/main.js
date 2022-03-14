@@ -1,6 +1,6 @@
 (() => {
 	const ws = new WebSocket('wss://horrible-zephyr-production.up.railway.app');
-	const labels = [dayjs().format('MM/DD/YY HH:mm:ss')];
+	const labels = ['Current'];
 	const data = [90];
 	const canvas = document.getElementById('ping-chart').getContext('2d');
 	const chart = new Chart(canvas, {
@@ -38,6 +38,12 @@
 
 		labels.push(timestamp);
 		data.push(ping);
+
+		if (labels.length > 10 && data.length > 10) {
+			labels.shift();
+			data.shift();
+		}
+
 		chart.update();
 	});
 })();
