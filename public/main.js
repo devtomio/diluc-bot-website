@@ -1,5 +1,5 @@
 (() => {
-	const ws = new WebSocket('wss://horrible-zephyr-production.up.railway.app');
+	const ws = new WebSocket('wss://diluc-api.tomio.codes');
 	const labels = ['Current'];
 	const data = [90];
 	const canvas = document.getElementById('ping-chart').getContext('2d');
@@ -29,7 +29,7 @@
 					},
 					beginAtZero: true,
 					min: 70,
-					max: 100
+					max: 130
 				}
 			}
 		}
@@ -41,7 +41,7 @@
 		labels.push(timestamp);
 		data.push(ping);
 
-		if (labels.length > 10 && data.length > 10) {
+		if (labels.length > 7 && data.length > 7) {
 			labels.shift();
 			data.shift();
 		}
