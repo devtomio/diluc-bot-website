@@ -20,6 +20,12 @@ interface Stats {
 	ram: `${number}.${number} MB`;
 	redisVersion: `${number}.${number}.${number}`;
 	dbEntries: number;
+	nodeVersion: `v${number}.${number}.${number}`;
+	cpu: string;
+	os: string;
+	cpuSpeed: `${number}.${number} GHz`;
+	discordJsVersion: `${number}.${number}.${number}`;
+	sapphireVersion: string;
 }
 
 export const getServerSideProps: GetServerSideProps = async () => {
@@ -33,7 +39,13 @@ export const getServerSideProps: GetServerSideProps = async () => {
 			Servers: data.servers,
 			RAM: data.ram,
 			Redis: data.redisVersion,
-			'Database Entries': data.dbEntries
+			'Database Entries': data.dbEntries,
+			'Node.js': data.nodeVersion,
+			CPU: data.cpu,
+			OS: data.os,
+			'CPU Speed': data.cpuSpeed,
+			'Discord.js': data.discordJsVersion,
+			Sapphire: data.sapphireVersion
 		}
 	};
 };
